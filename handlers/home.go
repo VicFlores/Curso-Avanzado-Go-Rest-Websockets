@@ -2,8 +2,9 @@ package handlers
 
 import (
 	"encoding/json"
-	"go/avanzado/rest-ws/server"
 	"net/http"
+
+	"platzi.com/go/rest-ws/server"
 )
 
 type HomeResponse struct {
@@ -16,7 +17,7 @@ func HomeHandler(s server.Server) http.HandlerFunc {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
 		json.NewEncoder(w).Encode(HomeResponse{
-			Message: "Welcome to the home",
+			Message: "Welcome to Platzi Go",
 			Status:  true,
 		})
 	}
